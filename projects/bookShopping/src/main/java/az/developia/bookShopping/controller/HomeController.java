@@ -1,0 +1,12 @@
+package az.developia.bookShopping.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+@GetMapping(path="/home")
+public String showHomePage() {
+	return "home";
+}
+}
