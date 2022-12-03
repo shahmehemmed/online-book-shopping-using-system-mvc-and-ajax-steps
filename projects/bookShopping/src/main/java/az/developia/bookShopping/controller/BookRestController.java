@@ -21,5 +21,9 @@ public  List<Book>findAll(){
 	
 	return bookDAO.findAll();
 }
-
+@GetMapping(path="/{id}")
+public   Book findById(@PathVariable(name="id")Integer id){
+	
+	return bookDAO.findById(id).get();
+}
 }
