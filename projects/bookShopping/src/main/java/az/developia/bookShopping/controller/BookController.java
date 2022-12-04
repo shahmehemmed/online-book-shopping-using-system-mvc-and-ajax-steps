@@ -31,6 +31,7 @@ public class BookController {
 		Book book = new Book();
 
 		model.addAttribute("book", book);
+		model.addAttribute("header", "Yeni kitab");
 
 		return "new-book";
 	}
@@ -44,7 +45,7 @@ public class BookController {
 
 		model.addAttribute("books", books);
 
-		return "books";
+		return "redirect:/books";
 	}
 	@GetMapping(path = "/books/delete/{id}")
 	public String deleteBook(@PathVariable(name="id")Integer id,Model model) {
@@ -74,6 +75,7 @@ public class BookController {
 		}
 
 		model.addAttribute("book", book);
+		model.addAttribute("header", "Kitab redaktesi");
 		return "new-book";
 	}
 }

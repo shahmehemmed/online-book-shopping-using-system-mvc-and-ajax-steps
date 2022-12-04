@@ -2,12 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 
-<title>Yeni kitab</title>
+<title th:text="${header}">Yeni kitab</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>#book-register-form{width:300px;margin:auto;}</style>
 </head>
 <body>
-	<h1 style="text-align:center">Yeni kitab</h1>
+	<h1  th:text="${header}" style="text-align:center; color:green">Yeni kitab</h1>
 
 
 	<form th:action="@{/books/new-book-process}" method="POST"
@@ -53,7 +53,7 @@
 
 
 
-		<input  class="btn btn-success" type="submit" value="Qeydiyyat" />
+		<input  class="btn btn-success" type="submit" value="Yadda saxla" />
 	</form>
 	<a th:href="@{/books}">Kitablarin siyahisi</a>
 	
