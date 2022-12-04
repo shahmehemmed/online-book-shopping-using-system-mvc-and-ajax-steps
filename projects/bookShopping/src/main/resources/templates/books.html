@@ -2,17 +2,20 @@
 <html  lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <title>Kitablar</title>
 <style>
 table,th,td{
 border:3px solid black;
 }
 table{border-collapse: collapse;width:100%;}
-th{padding:5px;background-color:lightgray;}
-td{padding:5px;background-color:gray;color:orange}
-td:hover{background-color:tomato;color:white;cursor:pointer}
+th{padding:5px;background-color:white;}
+td{padding:5px;background-color:white;color:black}
+td:hover{background-color:gray;color:white;cursor:pointer}
 #new-book-button{display:block;padding: 5px 10px;width:150px;background-color:slateblue;color:white;text-align:center;border-radius:10px; text-decoration:none;}
 #new-book-button:hover{background-color:yellow;color:black;cursor:pointer;}
+a{margin-right:5px;}
 </style>
 
 
@@ -35,7 +38,7 @@ $('#books-table').DataTable();
 <a th:href="@{/home}">Esas Sehife</a>
 
 <table id="books-table">
-<thead><tr><th>ID</th><th>AD</th><th>Tesvir</th><th>Qiymet</th><th>Muellif</th><th>Sehife sayi</th><th>Sekil</th></tr></thead>
+<thead><tr><th>ID</th><th>AD</th><th>Tesvir</th><th>Qiymet</th><th>Muellif</th><th>Sehife sayi</th><th>Sekil</th><th>Emeliyyat</th></tr></thead>
 <tbody>
 <tr th:each="book: ${books}">
 <td th:text="${book.id}" ></td>
@@ -45,7 +48,7 @@ $('#books-table').DataTable();
 <td th:text="${book.author}"></td>
 <td th:text="${book.pageCount}"></td>
 <td th:text="${book.image}"></td>
-
+<td><a th:href="@{/books/delete/{id}(id=${book.id})}" class="btn btn-danger">Sil</a><a class="btn btn-primary">Redakte</a></td>
 
 </tr>
 </tbody>
