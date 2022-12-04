@@ -34,6 +34,8 @@ $('#books-table').DataTable();
 </script>
 </head>
 <body>
+<div th:replace="menu::menu"></div>
+
 <a th:href="@{/books/new}" id="new-book-button">Yeni Kitab</a>
 <a th:href="@{/home}">Esas Sehife</a>
 
